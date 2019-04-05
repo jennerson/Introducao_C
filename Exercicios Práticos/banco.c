@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <sdlib.h>
+#include <stdlib.h>
 #include <time.h>
 
 //Tipo conta bancaria
@@ -14,36 +14,41 @@ typedef struct{
 //Lista de contas
 typedef struct{
 	contabancaria* conta;
-	Lista* prox;
+	contabancaria* prox;
 }Lista;
 
-Lista* CriaLista(){
+Lista* criaLista(){
 	return NULL;
 }
-
-contabancaria AddConta(){
-	int index;
-	
-	contabancaria conta = (contabancaria) malloc(sizeof(contabancaria));
+/*Adiçao de conta
+Função para alocação dinamica de contas*/
+contabancaria criaConta(){
+	criaLista();
+	contabancaria conta = malloc(sizeof(contabancaria));
 	srand(time(NULL));
 	
-	conta.Saldo = 0;
-		
+	conta.numConta = 1; //FAZER LOGICA PARA NUMERO DA CONTA AUTOMÁTICO
+	conta.saldo = 0;	
 	conta.chave = rand() % 10000;
-	printf("Sua chave numérica é: %d\n")
-		  ("Guarde sua senha !!!", conta.chave);
-	
+	printf("Sua chave numérica é: %d\n"
+		   "Guarde sua senha !!!", conta.chave);
 	printf("Informe seu nome completo: ");
-	scanf("%s", conta.Cliente);
-	
+	scanf("%s", conta.cliente);
 	printf("Crie sua senha: ");
 	scanf("%s", conta.senha);
-	
-	
 	return conta;
 }
 
 int main(){
+	int* index = 0;
+	contabancaria* raiz;
+	
+	contabancaria conta = criaConta();
+	printf("Conta = %6d\n"
+		   "Saldo = %2f\n"
+		   "Titular = %s\n"
+		   "Senha = %s\n"
+		   "Chave = %4d\n",conta.numConta, conta.saldo, conta.cliente, conta.senha, conta.chave);
 	
 	return 0;
 }
