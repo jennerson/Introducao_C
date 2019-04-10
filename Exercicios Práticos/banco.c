@@ -4,51 +4,41 @@
 
 //Tipo conta bancaria
 typedef struct{
-	int numConta;
-	char cliente[100];
+	char cliente[50];
 	float saldo;
+	unsigned int numConta;
 	char senha[8];
 	unsigned int chave;
-}contabancaria;
+}conta;
 
 //Lista de contas
-typedef struct{
-	contabancaria* conta;
-	contabancaria* prox;
-}Lista;
+typedef struct str_banco{
+	conta* cliente;
+	struct str_banco* prox;
+}banco;
 
-Lista* criaLista(){
-	return NULL;
-}
-/*Adiçao de conta
-Função para alocação dinamica de contas*/
-contabancaria criaConta(){
-	criaLista();
-	contabancaria conta = malloc(sizeof(contabancaria));
-	srand(time(NULL));
+//Adiçao de conta
+//Função para alocação dinamica de contas
+conta* criaConta(int* numcontas){
+	conta* infosConta = (conta*) malloc(sizeof(conta));
+	if( !infosConta ) return;
+	printf("Nome: ");
 	
-	conta.numConta = 1; //FAZER LOGICA PARA NUMERO DA CONTA AUTOMÁTICO
-	conta.saldo = 0;	
-	conta.chave = rand() % 10000;
-	printf("Sua chave numérica é: %d\n"
-		   "Guarde sua senha !!!", conta.chave);
-	printf("Informe seu nome completo: ");
-	scanf("%s", conta.cliente);
-	printf("Crie sua senha: ");
-	scanf("%s", conta.senha);
-	return conta;
+	gets(infosConta->cliente);
+	printf("Nome= ", infosConta->cliente);
+	return infosConta;
 }
 
 int main(){
-	int* index = 0;
-	contabancaria* raiz;
+	banco* lista_contas = 0;
+	int n, numcontas;
 	
-	contabancaria conta = criaConta();
-	printf("Conta = %6d\n"
-		   "Saldo = %2f\n"
-		   "Titular = %s\n"
-		   "Senha = %s\n"
-		   "Chave = %4d\n",conta.numConta, conta.saldo, conta.cliente, conta.senha, conta.chave);
+	printf("1 - Cria conta \n");
+	scanf("%d", &n);
+	getchar();
 	
+	if(n==1){
+		conta* infosConta = criaConta(numcontas);
+	}
 	return 0;
 }
