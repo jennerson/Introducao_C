@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-void ExibeMenu(){       //FUNÇAO QUE EXIBE AS OPÇÕES DO MENU
+//FUNÇAO QUE EXIBE AS OPÇÕES DO MENU
+void ExibeMenu(){       
 	
 	printf("\n-----------------------MENU-----------------------\n");
 	printf("1 - Calcular fatorial: \n");
@@ -16,8 +17,8 @@ void ExibeMenu(){       //FUNÇAO QUE EXIBE AS OPÇÕES DO MENU
 	printf("--------------------------------------------------\n");
 	
 }
-
-int Fatorial(){         //FUNÇÃO PARA CALCULO DE FATORIAL
+//FUNÇÃO PARA CALCULO DE FATORIAL
+int Fatorial(){         
 
 	int i, num, result;
 	
@@ -37,8 +38,8 @@ int Fatorial(){         //FUNÇÃO PARA CALCULO DE FATORIAL
 	
 	return 0;
 }
-
-int Primo(){			//FUNÇÃO PARA VERIFICAÇÃO DE NUMERO PRIMO
+//FUNÇÃO PARA VERIFICAÇÃO DE NUMERO PRIMO
+int Primo(){			
 	int num, i=0, primo=0;
 	
 	printf("Informe um numero inteiro: ");
@@ -48,7 +49,8 @@ int Primo(){			//FUNÇÃO PARA VERIFICAÇÃO DE NUMERO PRIMO
 		if(num%i==0){
 			primo ++;
 		}
-		//printf("num=%d  i=%d primo=%d \n", num, i, primo);              //DEBUG
+		//DEBUG
+		//printf("num=%d  i=%d primo=%d \n", num, i, primo);              
 	}
 	
 	if(primo>0){
@@ -58,8 +60,8 @@ int Primo(){			//FUNÇÃO PARA VERIFICAÇÃO DE NUMERO PRIMO
 		printf("O numero %d e primo!!! \n" , num);
 	}
 }
-
-void NPrimo(){			//FUNÇÃO PARA VERIFICAÇÃO DE VÁRIOS NUMEROS PRIMOS
+//FUNÇÃO PARA VERIFICAÇÃO DE VÁRIOS NUMEROS PRIMOS
+void NPrimo(){			
 	int num, i=0, primo;
 	
 	do{
@@ -76,7 +78,8 @@ void NPrimo(){			//FUNÇÃO PARA VERIFICAÇÃO DE VÁRIOS NUMEROS PRIMOS
 				primo ++;
 			}
 		}
-		//printf("num=%d  i=%d primo=%d \n", num, i, primo);              //DEBUG
+		//DEBUG
+		//printf("num=%d  i=%d primo=%d \n", num, i, primo);              
 	
 		if(primo>0){
 			printf("O numero %d nao e primo!!! \n", num);
@@ -86,8 +89,8 @@ void NPrimo(){			//FUNÇÃO PARA VERIFICAÇÃO DE VÁRIOS NUMEROS PRIMOS
 		}
 	}while(num!=0);
 }
-
-void Potencia(){		//FUNÇÃO PARA CALCULAR POTENCIA DE UM NUMERO A ELEVADO A B
+//FUNÇÃO PARA CALCULAR POTENCIA DE UM NUMERO A ELEVADO A B
+void Potencia(){		
 	float a, potencia;
 	int i,b;
 	
@@ -99,8 +102,8 @@ void Potencia(){		//FUNÇÃO PARA CALCULAR POTENCIA DE UM NUMERO A ELEVADO A B
 	potencia =(float) pow(a,b);
 	printf("Valor de %.1f elevado a %d = %.1e \n",a,b,potencia);
 }
-
-void Raiz(){			//FUNÇÃO PARA CALCULAR A RAIZ DE UM NUMERO A NA BASE B
+//FUNÇÃO PARA CALCULAR A RAIZ DE UM NUMERO A NA BASE B
+void Raiz(){			
 	float a, raiz;
 	int i,b;
 	
@@ -112,8 +115,8 @@ void Raiz(){			//FUNÇÃO PARA CALCULAR A RAIZ DE UM NUMERO A NA BASE B
 	raiz =(float) pow(a,1.0/b);
 	printf("Raiz de %.1f na base %d = %.1e \n",a,b,raiz);
 }
-
-void Bissexto(){		//FUNÇÃO PARA VERIFICAR ANO BISSEXTO
+//FUNÇÃO PARA VERIFICAR ANO BISSEXTO
+void Bissexto(){		
 	int ano;
 	
 	printf("Informe o ano a ser verificado: \n");
@@ -126,8 +129,8 @@ void Bissexto(){		//FUNÇÃO PARA VERIFICAR ANO BISSEXTO
   		printf("O ano %d NAO E bissexto !!!\n",ano);
 	}
 }
-
-void Media2(){			//FUNÇÃO PARA CALCULAR MEDIA ARITMETICA DE DUAS NOTAS
+//FUNÇÃO PARA CALCULAR MEDIA ARITMETICA DE DUAS NOTAS
+void Media2(){			
 	float nota1, nota2, media;
 	
 	printf("Informe a primeira nota: \n");
@@ -143,8 +146,8 @@ void Media2(){			//FUNÇÃO PARA CALCULAR MEDIA ARITMETICA DE DUAS NOTAS
 		printf("Valor das notas invalido !!!\n");
 	}
 }
-
-void MediaP(){			//FUNCAO PARA CALCULAR MEDIA PONDERADA DE TRES NOTAS
+//FUNCAO PARA CALCULAR MEDIA PONDERADA DE TRES NOTAS
+void MediaP(){			
 	float nota1,nota2,nota3,media;
 	
 	printf("Informe a primeira nota: \n");
@@ -162,8 +165,8 @@ void MediaP(){			//FUNCAO PARA CALCULAR MEDIA PONDERADA DE TRES NOTAS
 		printf("Voce foi reprovado!!! Media = %.1f \n",media);
 	}
 }
-
-void ExibeMatricula(){	//FUNÇÃO PARA EXIBIR O NOME E DEPOIS A MATRICULA EM HEXADECIMAL
+//FUNÇÃO PARA EXIBIR O NOME E DEPOIS A MATRICULA EM HEXADECIMAL
+void ExibeMatricula(){	
 	char nome[40];
 	int matricula;
 	
