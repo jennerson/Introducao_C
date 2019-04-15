@@ -52,7 +52,7 @@ char* catstr(char* str1, char* str2){
 	return newstr;
 }
 
-short int (char* str){
+short int lenstr(char* str){
 	int i=0;
 	
 	while(str[i] != '\0'){
